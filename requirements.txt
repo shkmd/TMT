@@ -1,0 +1,21 @@
+# Task Management Tool (TMT) API Dependencies
+
+# Core framework (if using FastAPI - uncomment if needed)
+# fastapi>=0.100.0
+# uvicorn>=0.23.0
+
+# Core framework (if using Flask - uncomment if needed)
+# flask>=2.3.0
+
+# Data validation
+pydantic>=2.0.0
+
+# Date/time utilities (standard library, but listed for clarity)
+# python-dateutil>=2.8.0  # Optional: for enhanced datetime parsing
+
+# Development dependencies
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.4.0

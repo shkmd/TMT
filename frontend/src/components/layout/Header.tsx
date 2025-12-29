@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Play, Search, Bell } from 'lucide-react';
-import { useAuthStore } from '@/store/authStore';
+import { useAuthStore } from '../../store/authStore';
 
 export const Header: React.FC = () => {
   const { user } = useAuthStore();

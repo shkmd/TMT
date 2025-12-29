@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { signalsApi, channelsApi, brokersApi } from '@/api';
-import { StatCard, PerformanceChart, LiveActivity } from '@/components/common';
+import { signalsApi, channelsApi, brokersApi } from '../api';
+import { StatCard, PerformanceChart, LiveActivity } from '../components/common';
 import { IndianRupee, TrendingUp, BarChart3, Calendar } from 'lucide-react';
-import { useAuthStore } from '@/store/authStore';
+import { useAuthStore } from '../store/authStore';
 
 export const Dashboard: React.FC = () => {
   const { user } = useAuthStore();

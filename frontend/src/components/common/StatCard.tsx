@@ -1,6 +1,6 @@
 import React from 'react';
 import { LucideIcon, TrendingUp, TrendingDown } from 'lucide-react';
-import { cn } from '@/utils/helpers';
+import { cn } from '../../utils/helpers';
 
 interface StatCardProps {
   title: string;

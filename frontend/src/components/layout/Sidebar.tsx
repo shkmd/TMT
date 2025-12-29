@@ -9,7 +9,7 @@ import {
   Settings,
   Activity
 } from 'lucide-react';
-import { cn } from '@/utils/helpers';
+import { cn } from '../../utils/helpers';
 
 const mainNavigation = [
   { name: 'Dashboard', to: '/dashboard', icon: LayoutDashboard },

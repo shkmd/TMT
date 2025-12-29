@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/utils/helpers';
+import { cn } from '../../utils/helpers';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;

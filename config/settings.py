@@ -3,6 +3,7 @@ Configuration settings for Auto Trade Sync App
 """
 from pydantic_settings import BaseSettings
 from typing import Optional
+from pydantic import field_validator
 
 
 class Settings(BaseSettings):
@@ -32,6 +33,14 @@ class Settings(BaseSettings):
     TELEGRAM_API_HASH: Optional[str] = None
     TELEGRAM_BOT_TOKEN: Optional[str] = None
     TELEGRAM_SESSION_NAME: str = "auto_trade_bot"
+
+    @field_validator('TELEGRAM_API_ID', mode='before')
+    @classmethod
+    def empty_str_to_none(cls, v):
+        """Convert empty strings to None for optional integer fields"""
+        if v == '' or v is None:
+            return None
+        return v
 
     # Broker API Keys (will be stored per-user in database, these are defaults)
     # Angel One

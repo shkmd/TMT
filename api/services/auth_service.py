@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 
+from api.database import get_db
 from api.models import User
 from api.schemas.user import TokenData
 from config.settings import settings
@@ -66,7 +67,7 @@ class AuthService:
         return user
 
     @staticmethod
-    def get_current_user(db: Session, token: str = Depends(oauth2_scheme)) -> User:
+    def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
         """Get current user from JWT token"""
         credentials_exception = HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

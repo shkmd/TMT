@@ -7,6 +7,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 from api.database import get_db
+from api.models import User
 from api.schemas.user import UserCreate, UserResponse, UserLogin, Token
 from api.services.auth_service import AuthService
 from config.settings import settings
@@ -83,14 +84,12 @@ def login(
 
 @router.get("/me", response_model=UserResponse)
 def get_current_user_info(
-    db: Session = Depends(get_db),
-    current_user = Depends(AuthService.get_current_active_user)
+    current_user: User = Depends(AuthService.get_current_active_user)
 ):
     """
     Get current logged-in user information
 
     Args:
-        db: Database session
         current_user: Current authenticated user
 
     Returns:
